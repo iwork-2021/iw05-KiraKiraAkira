@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52CBFE34277C6A5900077F8B /* SnackDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 52CBFE33277C6A5900077F8B /* SnackDetector.mlmodel */; };
 		7124694A273994F3000929DA /* BoundingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71246949273994F3000929DA /* BoundingBoxView.swift */; };
 		7B0EB8AA2052A38A00EB567E /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0EB8A92052A38A00EB567E /* VideoCapture.swift */; };
 		7B11BA832048333700D790AA /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11BA822048333700D790AA /* CGImagePropertyOrientation.swift */; };
@@ -18,7 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		71246949273994F3000929DA /* BoundingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoundingBoxView.swift; path = ../../../../../../iOS2021/Assignments/iw05555/SnackLocalization/SnackLocalization/BoundingBoxView.swift; sourceTree = "<group>"; };
+		52CBFE33277C6A5900077F8B /* SnackDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SnackDetector.mlmodel; path = ../../SnackDetector.mlmodel; sourceTree = "<group>"; };
+		71246949273994F3000929DA /* BoundingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxView.swift; sourceTree = "<group>"; };
 		7B0EB8A92052A38A00EB567E /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		7B11BA822048333700D790AA /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
 		7BF6C65C204818EC00606217 /* ObjectDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,7 @@
 				71246949273994F3000929DA /* BoundingBoxView.swift */,
 				7B11BA822048333700D790AA /* CGImagePropertyOrientation.swift */,
 				7B0EB8A92052A38A00EB567E /* VideoCapture.swift */,
+				52CBFE33277C6A5900077F8B /* SnackDetector.mlmodel */,
 				7BF6C663204818EC00606217 /* Main.storyboard */,
 				7BF6C668204818ED00606217 /* LaunchScreen.storyboard */,
 				7BF6C666204818ED00606217 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF6C662204818EC00606217 /* ViewController.swift in Sources */,
+				52CBFE34277C6A5900077F8B /* SnackDetector.mlmodel in Sources */,
 				7124694A273994F3000929DA /* BoundingBoxView.swift in Sources */,
 				7B0EB8AA2052A38A00EB567E /* VideoCapture.swift in Sources */,
 				7BF6C660204818EC00606217 /* AppDelegate.swift in Sources */,
@@ -292,17 +296,16 @@
 		7BF6C66F204818ED00606217 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E98L3B5R56;
+				DEVELOPMENT_TEAM = 33S44Z7WW4;
 				INFOPLIST_FILE = Snacks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.ObjectDetection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KiraKiraAkira.ObjectDetection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -313,10 +316,9 @@
 		7BF6C670204818ED00606217 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E98L3B5R56;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Snacks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

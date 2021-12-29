@@ -181,10 +181,51 @@ class ViewController: UIViewController {
 
   func processObservations(for request: VNRequest, error: Error?) {
     //call show function
+      DispatchQueue.main.async {
+              let results = request.results as? [VNRecognizedObjectObservation]
+              if results?.isEmpty == false {
+                  self.show(predictions: results!)
+              } else {
+                  print("results empty")
+              }
+          }
   }
 
   func show(predictions: [VNRecognizedObjectObservation]) {
    //process the results, call show function in BoundingBoxView
+      for boxViewCount in 0..<boundingBoxViews.count {
+              guard boxViewCount < predictions.count else {
+                  boundingBoxViews[boxViewCount].hide()
+                  return
+              }
+
+              let prediction = predictions[boxViewCount]
+          if prediction.labels[0].confidence>0.8{
+              let width = view.bounds.width
+              let height = width * 1280 / 720
+              let offsetY = (view.bounds.height - height) / 2
+              let scale = CGAffineTransform.identity.scaledBy(x: width, y: height)
+              let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -height - offsetY)
+              let rect = prediction.boundingBox.applying(scale).applying(transform)
+
+              let label: String = prediction.labels[0].identifier + "\(prediction.labels[0].confidence * 100)%"
+
+              let color = colors[prediction.labels[0].identifier] ?? UIColor.yellow
+              boundingBoxViews[boxViewCount].show(frame: rect, label: label, color: color)
+          }
+//              let width = view.bounds.width
+//              let height = width * 1280 / 720
+//              let offsetY = (view.bounds.height - height) / 2
+//              let scale = CGAffineTransform.identity.scaledBy(x: width, y: height)
+//              let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -height - offsetY)
+//              let rect = prediction.boundingBox.applying(scale).applying(transform)
+//
+//              let label: String = prediction.labels[0].identifier + "\(prediction.labels[0].confidence * 100)%"
+//
+//              let color = colors[prediction.labels[0].identifier] ?? UIColor.yellow
+//              boundingBoxViews[boxViewCount].show(frame: rect, label: label, color: color)
+          }
+}
 }
 
 extension ViewController: VideoCaptureDelegate {
